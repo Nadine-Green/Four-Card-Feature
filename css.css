@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter:wght@400;700&family=Karla:wght@400;700&family=Lexend+Deca&family=Montserrat:wght@500;700&family=Outfit:wght@300;400;600&family=Poppins:wght@200;400;600&family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+*{
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    box-sizing:border-box;
+    font-family:"Poppins"
+}
+
+body{
+    display:grid;
+    place-items:center;
+    padding:2rem;
+    background-image: url("images/forest.jpg");
+}
+
+h1,h2,h3,p{
+    overflow-wrap: break-word;
+}
+
+header{
+    text-align:center;
+    line-height:0.8;
+}
+
+h1:nth-child(1){
+    color:var(--grayish-blue);
+    font-weight: 200;
+}
+
+h1:nth-child(2){
+    color:var(--very-dark-blue);
+    font-weight:600;
+}
+
+.description{
+    color:var(--grayish-blue);
+    font-weight:200;
+    max-width: 33.75rem;
+    margin: 0 auto;
+    margin-bottom:4rem;
+    line-height:1.5;
+}
+
+section{
+    display:grid;
+    padding:0px;
+    grid-template-areas:
+    "box-one box-two box-four"
+    "box-one box-three box-four";
+    gap:1rem;
+    justify-items:center;
+}
+
+.box{
+    padding: 1rem 1rem 6rem 1rem;
+    max-width:350px;
+    box-shadow: 3px 9px 20px -10px black;
+    align-self:center;
+    border-radius:5px;
+    cursor:pointer;
+    background-color:rgba(255, 255, 255, 0.4);
+}
+
+.box h1{
+    color:black;
+    font-weight:600;
+}
+
+.box__one{
+    grid-area:box-one;
+    border-top: 4px solid var(--cyan);
+    background-image: url("images/icon-supervisor.svg");
+    background-repeat:no-repeat;
+    background-position-x: 90%;
+    background-position-y: 90%;
+}
+
+.box__one:hover{
+    border:none;
+    box-shadow:1px 1px 15px 5px cyan;
+}
+
+.box__two{
+    grid-area:box-two;
+    border-top: 4px solid var(--red);
+    background-image: url("images/icon-team-builder.svg");
+    background-repeat:no-repeat;
+    background-position-x: 90%;
+    background-position-y: 90%;
+}
+
+.box__two:hover{
+    border:none;
+    box-shadow:1px 1px 15px 5px red;
+}
+
+.box__three{
+    grid-area:box-three;
+    border-top: 4px solid var(--orange);
+    background-image: url("images/icon-karma.svg");
+    background-repeat:no-repeat;
+    background-position-x: 90%;
+    background-position-y: 90%;
+}
+
+.box__three:hover{
+    border:none;
+    box-shadow:1px 1px 15px 5px orange;
+}
+
+.box__four{
+    grid-area:box-four;
+    border-top: 4px solid var(--blue);
+    background-image: url("images/icon-calculator.svg");
+    background-repeat:no-repeat;
+    background-position-x: 90%;
+    background-position-y: 90%;
+}
+
+.box__four:hover{
+    border:none;
+    box-shadow:1px 1px 15px 5px blue;
+}
+
+
+@media screen and (min-width:500px) and (max-width:800px){
+    section{grid-template-areas: 
+    "box-one box-two"
+    "box-three box-four";
+    }
+
+}
+
+@media screen and (max-width:500px){
+
+    section{
+        display:flex;
+        flex-direction:column;
+
+    }
+}
